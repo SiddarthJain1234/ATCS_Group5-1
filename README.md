@@ -33,3 +33,9 @@ As Company able to change the view order of jobs
 As company search for candidate profile based on (experience , location , degree)
 
 As company able to shortlist the Candidate or bookmark the Candidate
+
+Mappings:-
+![mappings](https://raw.githubusercontent.com/SiddarthJain1234/JobPortal/main/images/MAPPINGS.PNG)
+
+Entities:-
+![entities](https://raw.githubusercontent.com/SiddarthJain1234/JobPortal/main/images/entities1.png)
