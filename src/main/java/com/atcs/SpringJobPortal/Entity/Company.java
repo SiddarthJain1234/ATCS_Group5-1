@@ -1,64 +1,74 @@
 package com.atcs.SpringJobPortal.Entity;
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name="Company")
+@Table(name = "Company")
 public class Company {
-	public Company(int id, String name, String about, List<com.atcs.SpringJobPortal.Entity.Job> job) {
+	
+
+
+
+	public Company(int id, String name, String about, int companyid) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.about = about;
-		Job = job;
+		this.companyid = companyid;
 	}
-	Company(){
-		
+
+	Company() {
+
 	}
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-int id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
 	@Column
-String name;
+	String name;
 	@Column
-String about;
-	@OneToMany(mappedBy="company")
-	List<Job> Job;
+	String about;
+	@Column
+	int companyid;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getAbout() {
 		return about;
 	}
+
 	public void setAbout(String about) {
 		this.about = about;
 	}
-	@JsonManagedReference
-	public List<Job> getJob() {
-		return Job;
+
+	public int getCompanyid() {
+		return companyid;
 	}
-	public void setJob(List<Job> job) {
-		Job = job;
+
+	public void setCompanyid(int companyid) {
+		this.companyid = companyid;
 	}
-	
+
+
 }

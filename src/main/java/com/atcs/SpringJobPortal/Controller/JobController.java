@@ -18,26 +18,29 @@ import com.atcs.SpringJobPortal.Repo.JobRepo;
 @RestController
 @RequestMapping("/job")
 public class JobController {
-@Autowired
-JobRepo jr;
+	@Autowired
+	JobRepo jr;
 
-@GetMapping("/")
-public List<Job> get(){
-	return jr.findAll();
-}
-@PostMapping("/")
-public List<Job>post(@RequestBody Job j){
-	jr.save(j);
-	return jr.findAll();
-}
-@PutMapping("/")
-public List<Job>put(@RequestBody Job je){
-	jr.save(je);
-	return jr.findAll();
-}
-@DeleteMapping("/{id}")
-public List<Job>delete(@PathVariable int id){
-	jr.deleteById(id);
-	return jr.findAll();
-}
+	@GetMapping("/")
+	public List<Job> get() {
+		return jr.findAll();
+	}
+
+	@PostMapping("/")
+	public List<Job> post(@RequestBody Job j) {
+		jr.save(j);
+		return jr.findAll();
+	}
+
+	@PutMapping("/")
+	public List<Job> put(@RequestBody Job je) {
+		jr.save(je);
+		return jr.findAll();
+	}
+
+	@DeleteMapping("/{id}")
+	public List<Job> delete(@PathVariable int id) {
+		jr.deleteById(id);
+		return jr.findAll();
+	}
 }
